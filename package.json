@@ -1,0 +1,73 @@
+{
+  "name": "npm-package-template-ts",
+  "author": {
+    "name": "Adam Logan (adamlogan17)"
+  },
+  "homepage": "https://npm-package-template-ts.netlify.app/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adamlogan17/npm-package-template-ts.git"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "template"
+  ],
+  "license": "MIT",
+  "private": false,
+  "version": "0.0.14",
+  "type": "module",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run prettier && tsc && vite build",
+    "build:library": "node generate-main.js && tsc --p ./tsconfig.lib.json && vite build --config vite.lib.config.js",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "prettier": "prettier --write \"./**/*.{js,ts,jsx,tsx,cjs}\"",
+    "prepublishOnly": "npm run build:library",
+    "publish:patch": "npm version minor && npm publish",
+    "publish:minor": "npm version major && npm publish",
+    "publish:major": "npm version patch && npm publish",
+    "docs": "typedoc --options typedoc.config.json --out docs/site && typedoc --options typedoc.config.json --plugin typedoc-plugin-markdown --out docs/markdown"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "devDependencies": {
+    "@monaco-editor/react": "^4.6.0",
+    "@types/node": "^20.11.17",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "glob": "^10.3.10",
+    "prettier": "^3.2.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-live": "^4.1.6",
+    "typedoc": "^0.25.8",
+    "typedoc-plugin-markdown": "^3.17.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.0",
+    "vite-plugin-dts": "^3.7.2",
+    "vite-plugin-lib-inject-css": "^1.3.0"
+  }
+}
