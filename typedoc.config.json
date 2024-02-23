@@ -2,7 +2,7 @@
   "out": "./docs",
   "exclude": ["**/node_modules/**/*", "**/tests/**/*"],
   "theme": "default",
-  "name": "NPM package",
+  "name": "extended-mui",
   "readme": "README.md",
   "excludePrivate": true,
   "excludeProtected": true,

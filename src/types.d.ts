@@ -1,10 +1,10 @@
 /**
  * @typedef LiveReactEditorProps
- * 
+ *
  * @author @adamlogan17
- * 
+ *
  * Represents the props accepted by the LiveReactEditor component.
- * 
+ *
  * @property {string} code - a string that represents the code to be displayed in the live editor.
  * @property {Record<string, any>} scope - a component (or components) that can be used within the live editor, all default components are available.
  * @property {string} [borderColor] - an optional string that represents the border color of the live editor.
@@ -14,7 +14,7 @@
 type LiveReactEditorProps = {
 	code: string;
 	scope: Record<string, any>;
-  borderColor?: string;
-  borderSize?: number;
-  mediaBreakpoint?: number;
+	borderColor?: string;
+	borderSize?: number;
+	mediaBreakpoint?: number;
 };
